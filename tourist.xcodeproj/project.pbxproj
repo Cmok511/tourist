@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0972832BC1764800E2E80F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE0972822BC1764800E2E80F /* Alamofire */; };
+		CE0972862BC17AD400E2E80F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972852BC17AD400E2E80F /* ProfileViewController.swift */; };
+		CE0972882BC17BC000E2E80F /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972872BC17BC000E2E80F /* ProfileAssembly.swift */; };
+		CE09728B2BC1809300E2E80F /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09728A2BC1809300E2E80F /* TracksViewController.swift */; };
+		CE09728D2BC181C700E2E80F /* TracksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09728C2BC181C700E2E80F /* TracksAssembly.swift */; };
 		CE2130032BC117AE00E09308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130022BC117AE00E09308 /* AppDelegate.swift */; };
 		CE2130052BC117AE00E09308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130042BC117AE00E09308 /* SceneDelegate.swift */; };
 		CE21300C2BC117AF00E09308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE21300B2BC117AF00E09308 /* Assets.xcassets */; };
@@ -15,8 +20,6 @@
 		CE21301D2BC1187400E09308 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21301B2BC1187400E09308 /* Coordinator.swift */; };
 		CE2130202BC1187E00E09308 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21301F2BC1187D00E09308 /* TabBarController.swift */; };
 		CE2130312BC1190200E09308 /* Wormholy in Frameworks */ = {isa = PBXBuildFile; productRef = CE2130302BC1190200E09308 /* Wormholy */; };
-		CE2130342BC1190D00E09308 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE2130332BC1190D00E09308 /* Alamofire */; };
-		CE2130362BC1190D00E09308 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CE2130352BC1190D00E09308 /* AlamofireDynamic */; };
 		CE2130392BC1191C00E09308 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = CE2130382BC1191C00E09308 /* SDWebImage */; };
 		CE21303B2BC1191C00E09308 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE21303A2BC1191C00E09308 /* SDWebImageMapKit */; };
 		CE21303F2BC11A0E00E09308 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21303E2BC11A0E00E09308 /* MainScreenViewController.swift */; };
@@ -26,9 +29,16 @@
 		CE2130522BC1225000E09308 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130512BC1225000E09308 /* AuthViewModel.swift */; };
 		CE2130542BC1226800E09308 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130532BC1226800E09308 /* AuthAssembly.swift */; };
 		CE2130572BC1300700E09308 /* MainScreenItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130562BC1300700E09308 /* MainScreenItemView.swift */; };
+		CE21305A2BC1435C00E09308 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130592BC1435C00E09308 /* MapViewController.swift */; };
+		CE21305C2BC1439B00E09308 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */; };
+		CE21305E2BC143B600E09308 /* MapViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0972852BC17AD400E2E80F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CE0972872BC17BC000E2E80F /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		CE09728A2BC1809300E2E80F /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		CE09728C2BC181C700E2E80F /* TracksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksAssembly.swift; sourceTree = "<group>"; };
 		CE212FFF2BC117AE00E09308 /* tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2130022BC117AE00E09308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2130042BC117AE00E09308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +55,9 @@
 		CE2130512BC1225000E09308 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CE2130532BC1226800E09308 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		CE2130562BC1300700E09308 /* MainScreenItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenItemView.swift; sourceTree = "<group>"; };
+		CE2130592BC1435C00E09308 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
+		CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,16 +66,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2130312BC1190200E09308 /* Wormholy in Frameworks */,
+				CE0972832BC1764800E2E80F /* Alamofire in Frameworks */,
 				CE21303B2BC1191C00E09308 /* SDWebImageMapKit in Frameworks */,
-				CE2130362BC1190D00E09308 /* AlamofireDynamic in Frameworks */,
 				CE2130392BC1191C00E09308 /* SDWebImage in Frameworks */,
-				CE2130342BC1190D00E09308 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE0972842BC17AC400E2E80F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CE0972852BC17AD400E2E80F /* ProfileViewController.swift */,
+				CE0972872BC17BC000E2E80F /* ProfileAssembly.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CE0972892BC1808000E2E80F /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				CE09728A2BC1809300E2E80F /* TracksViewController.swift */,
+				CE09728C2BC181C700E2E80F /* TracksAssembly.swift */,
+			);
+			path = Tracks;
+			sourceTree = "<group>";
+		};
 		CE212FF62BC117AE00E09308 = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +160,11 @@
 		CE21303C2BC119AA00E09308 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE0972892BC1808000E2E80F /* Tracks */,
+				CE0972842BC17AC400E2E80F /* Profile */,
 				CE21304E2BC11F1A00E09308 /* Auth */,
 				CE21303D2BC119C200E09308 /* MainScreen */,
+				CE2130582BC1434700E09308 /* MapScreen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -157,6 +190,16 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		CE2130582BC1434700E09308 /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE2130592BC1435C00E09308 /* MapViewController.swift */,
+				CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */,
+				CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,10 +218,9 @@
 			name = tourist;
 			packageProductDependencies = (
 				CE2130302BC1190200E09308 /* Wormholy */,
-				CE2130332BC1190D00E09308 /* Alamofire */,
-				CE2130352BC1190D00E09308 /* AlamofireDynamic */,
 				CE2130382BC1191C00E09308 /* SDWebImage */,
 				CE21303A2BC1191C00E09308 /* SDWebImageMapKit */,
+				CE0972822BC1764800E2E80F /* Alamofire */,
 			);
 			productName = tourist;
 			productReference = CE212FFF2BC117AE00E09308 /* tourist.app */;
@@ -210,8 +252,8 @@
 			mainGroup = CE212FF62BC117AE00E09308;
 			packageReferences = (
 				CE21302F2BC1190200E09308 /* XCRemoteSwiftPackageReference "Wormholy" */,
-				CE2130322BC1190D00E09308 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE2130372BC1191C00E09308 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				CE0972812BC1764800E2E80F /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = CE2130002BC117AE00E09308 /* Products */;
 			projectDirPath = "";
@@ -240,14 +282,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE2130522BC1225000E09308 /* AuthViewModel.swift in Sources */,
+				CE0972882BC17BC000E2E80F /* ProfileAssembly.swift in Sources */,
 				CE2130542BC1226800E09308 /* AuthAssembly.swift in Sources */,
 				CE2130572BC1300700E09308 /* MainScreenItemView.swift in Sources */,
 				CE2130432BC11A5000E09308 /* MainScreenAssembly.swift in Sources */,
 				CE21301D2BC1187400E09308 /* Coordinator.swift in Sources */,
 				CE2130412BC11A2D00E09308 /* MainScreenViewModel.swift in Sources */,
+				CE0972862BC17AD400E2E80F /* ProfileViewController.swift in Sources */,
+				CE21305C2BC1439B00E09308 /* MapViewControllerViewModel.swift in Sources */,
+				CE21305A2BC1435C00E09308 /* MapViewController.swift in Sources */,
 				CE2130032BC117AE00E09308 /* AppDelegate.swift in Sources */,
 				CE2130502BC1222200E09308 /* AuthController.swift in Sources */,
+				CE09728D2BC181C700E2E80F /* TracksAssembly.swift in Sources */,
+				CE09728B2BC1809300E2E80F /* TracksViewController.swift in Sources */,
 				CE21301C2BC1187400E09308 /* BaseCoordinator.swift in Sources */,
+				CE21305E2BC143B600E09308 /* MapViewControllerAssembly.swift in Sources */,
 				CE2130202BC1187E00E09308 /* TabBarController.swift in Sources */,
 				CE2130052BC117AE00E09308 /* SceneDelegate.swift in Sources */,
 				CE21303F2BC11A0E00E09308 /* MainScreenViewController.swift in Sources */,
@@ -306,6 +355,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -369,6 +419,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -381,6 +432,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -467,20 +519,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE0972812BC1764800E2E80F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		CE21302F2BC1190200E09308 /* XCRemoteSwiftPackageReference "Wormholy" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tadelv/Wormholy";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.6.5;
-			};
-		};
-		CE2130322BC1190D00E09308 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
 			};
 		};
 		CE2130372BC1191C00E09308 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
@@ -494,20 +546,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE0972822BC1764800E2E80F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE0972812BC1764800E2E80F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CE2130302BC1190200E09308 /* Wormholy */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE21302F2BC1190200E09308 /* XCRemoteSwiftPackageReference "Wormholy" */;
 			productName = Wormholy;
-		};
-		CE2130332BC1190D00E09308 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE2130322BC1190D00E09308 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		CE2130352BC1190D00E09308 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE2130322BC1190D00E09308 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		CE2130382BC1191C00E09308 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

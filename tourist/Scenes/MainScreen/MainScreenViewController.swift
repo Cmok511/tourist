@@ -11,6 +11,7 @@ import UIKit
 final class MainScreenViewController: UIViewController {
 
     private lazy var stackView = makeStackView()
+    private lazy var largeTitle = makeLargeTitle()
    
     private var mapView = MainScreenItemView()
     private var trackerView = MainScreenItemView()
@@ -23,13 +24,17 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(resource: .background)
-        title = "Доброго пути!"
-        addLayout()
-        mapView.setup(image: UIImage(resource: .mapItem))
-        trackerView.setup(image: UIImage(resource: .checkPointsItem))
-        templateView.setup(image: UIImage(resource: .templateItem))
-        personalView.setup(image: UIImage(resource: .profileItem))
+        setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     init(viewModel: MainScreenViewModel) {
@@ -42,6 +47,41 @@ final class MainScreenViewController: UIViewController {
     }
 }
 
+// MARK: - Private Methods
+
+private extension MainScreenViewController {
+    func setupUI() {
+        view.backgroundColor = UIColor(resource: .background)
+        addLayout()
+        mapView.setup(image: UIImage(resource: .mapItem))
+        trackerView.setup(image: UIImage(resource: .checkPointsItem))
+        templateView.setup(image: UIImage(resource: .templateItem))
+        personalView.setup(image: UIImage(resource: .profileItem))
+        mapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushMap)))
+        personalView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushProfile)))
+        trackerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushTracks)))
+    }
+    
+    @objc func pushMap() {
+        let vc = MapViewControllerAssembly.assemblyScene()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func pushProfile() {
+        let vc = ProfileAssembly.assemblyScene()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func pushTracks() {
+        let vc = TracksAssembly.assemblyScene()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
 private extension MainScreenViewController {
     func makeStackView() -> UIStackView {
         let stakView = UIStackView()
@@ -50,6 +90,15 @@ private extension MainScreenViewController {
         stakView.spacing = 12
         stakView.axis = .vertical
         return stakView
+    }
+    
+    func makeLargeTitle() -> UILabel {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Доброго пути!"
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .text
+        return label
     }
 }
 
@@ -61,6 +110,7 @@ private extension MainScreenViewController {
     
     func addViews() {
         view.addSubview(stackView)
+        view.addSubview(largeTitle)
         stackView.addArrangedSubview(mapView)
         stackView.addArrangedSubview(trackerView)
         stackView.addArrangedSubview(templateView)
@@ -69,9 +119,13 @@ private extension MainScreenViewController {
     
     func setConstarints() {
         NSLayoutConstraint.activate([
+            largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            largeTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            
+            
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            stackView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 20),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
     }
