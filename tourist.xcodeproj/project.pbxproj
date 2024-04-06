@@ -15,6 +15,8 @@
 		CE0972912BC185C200E2E80F /* TemplateTracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972902BC185C200E2E80F /* TemplateTracksViewController.swift */; };
 		CE0972932BC185E200E2E80F /* TemplateTracksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972922BC185E200E2E80F /* TemplateTracksAssembly.swift */; };
 		CE0972962BC1867900E2E80F /* TemplateTracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972952BC1867900E2E80F /* TemplateTracksTableViewCell.swift */; };
+		CE0972992BC19E7C00E2E80F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0972982BC19E7C00E2E80F /* NetworkManager.swift */; };
+		CE09729B2BC1B20400E2E80F /* CuctomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09729A2BC1B20400E2E80F /* CuctomPin.swift */; };
 		CE2130032BC117AE00E09308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130022BC117AE00E09308 /* AppDelegate.swift */; };
 		CE2130052BC117AE00E09308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130042BC117AE00E09308 /* SceneDelegate.swift */; };
 		CE21300C2BC117AF00E09308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE21300B2BC117AF00E09308 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		CE0972902BC185C200E2E80F /* TemplateTracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTracksViewController.swift; sourceTree = "<group>"; };
 		CE0972922BC185E200E2E80F /* TemplateTracksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTracksAssembly.swift; sourceTree = "<group>"; };
 		CE0972952BC1867900E2E80F /* TemplateTracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTracksTableViewCell.swift; sourceTree = "<group>"; };
+		CE0972982BC19E7C00E2E80F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CE09729A2BC1B20400E2E80F /* CuctomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuctomPin.swift; sourceTree = "<group>"; };
 		CE212FFF2BC117AE00E09308 /* tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2130022BC117AE00E09308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE2130042BC117AE00E09308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CE0972972BC19E6B00E2E80F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CE0972982BC19E7C00E2E80F /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		CE212FF62BC117AE00E09308 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +156,7 @@
 		CE2130012BC117AE00E09308 /* tourist */ = {
 			isa = PBXGroup;
 			children = (
+				CE0972972BC19E6B00E2E80F /* Managers */,
 				CE2130162BC117C000E09308 /* Application */,
 				CE2130192BC1187400E09308 /* Base */,
 				CE21303C2BC119AA00E09308 /* Scenes */,
@@ -229,6 +242,7 @@
 				CE2130592BC1435C00E09308 /* MapViewController.swift */,
 				CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */,
 				CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */,
+				CE09729A2BC1B20400E2E80F /* CuctomPin.swift */,
 			);
 			path = MapScreen;
 			sourceTree = "<group>";
@@ -314,9 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0972992BC19E7C00E2E80F /* NetworkManager.swift in Sources */,
 				CE2130522BC1225000E09308 /* AuthViewModel.swift in Sources */,
 				CE0972882BC17BC000E2E80F /* ProfileAssembly.swift in Sources */,
 				CE2130542BC1226800E09308 /* AuthAssembly.swift in Sources */,
+				CE09729B2BC1B20400E2E80F /* CuctomPin.swift in Sources */,
 				CE2130572BC1300700E09308 /* MainScreenItemView.swift in Sources */,
 				CE0972912BC185C200E2E80F /* TemplateTracksViewController.swift in Sources */,
 				CE0972962BC1867900E2E80F /* TemplateTracksTableViewCell.swift in Sources */,

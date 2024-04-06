@@ -10,13 +10,14 @@ final class MapViewController: UIViewController {
     
     // MARK: Properties
     
+    private var viewModel: MapViewControllerViewModel
     private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addlayout()
         setupUI()
-
+        getLocations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +32,66 @@ final class MapViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    init(viewModel: MapViewControllerViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Network
+
+private extension MapViewController {
+    func getLocations() {
+        viewModel.getLocations { locations in
+            DispatchQueue.main.async {
+                locations.forEach {
+                    self.addNewPin(location: $0)
+                }
+            }
+        }
+    }
+    
+    
+}
+
+// MARK: - Private Methods
+
+private extension MapViewController {
+    func render(location: CLLocation) {
+        let coordinate = CLLocationCoordinate2D(
+            latitude: location.coordinate.latitude,
+            longitude: location.coordinate.longitude
+        )
+        let span = MKCoordinateSpan(
+            latitudeDelta: 0.1,
+            longitudeDelta: 0.1
+        )
+        let region = MKCoordinateRegion(center: coordinate , span: span)
+        mapView.setRegion(region, animated: true)
+        
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
+    }
+    
+    func addNewPin(location: MapLocations) {
+        guard let latitude = location.lat else { return }
+        guard let longitude = location.lon else { return }
+        
+        let coordinate = CLLocationCoordinate2D(
+            latitude: Double(latitude),
+            longitude: Double(longitude)
+        )
+    
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        mapView.addAnnotation(pin)
     }
 }
 
@@ -106,25 +167,6 @@ private extension MapViewController {
             helpButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             helpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15)
         ])
-    }
-    
-    func render(location: CLLocation) {
-        let coordinate = CLLocationCoordinate2D(
-            latitude: location.coordinate.latitude,
-            longitude: location.coordinate.longitude
-        )
-        let span = MKCoordinateSpan(
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.1
-        )
-        
-        let region = MKCoordinateRegion(center: coordinate , span: span)
-        
-        mapView.setRegion(region, animated: true)
-        
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
-        mapView.addAnnotation(pin)
     }
 }
 
