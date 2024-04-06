@@ -11,6 +11,7 @@ final class ProfileViewController: UIViewController {
     private let photoView = PhotoView()
     private let userDataView = ProfileDataView()
     private let personalDataView = PersonalDataView()
+    private let hobbyView = HobbyView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,7 @@ private extension ProfileViewController {
         stackView.addArrangedSubview(photoView)
         stackView.addArrangedSubview(userDataView)
         stackView.addArrangedSubview(personalDataView)
+        stackView.addArrangedSubview(hobbyView)
     }
     
     func setConstraints() {

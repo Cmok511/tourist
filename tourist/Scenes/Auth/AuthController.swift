@@ -19,6 +19,9 @@ final class AuthController: UIViewController {
         view.backgroundColor = UIColor(resource: .main)
         addLayout()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        loginTextField.text = "  test"
+        passTextField.text = "      12345678"
+        passTextField.isSecureTextEntry = true
     }
     
     init(viewModel: AuthViewModel) {

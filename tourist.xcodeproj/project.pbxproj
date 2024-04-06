@@ -40,6 +40,7 @@
 		CE21305A2BC1435C00E09308 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130592BC1435C00E09308 /* MapViewController.swift */; };
 		CE21305C2BC1439B00E09308 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */; };
 		CE21305E2BC143B600E09308 /* MapViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */; };
+		CE83307B2BC1DADF00F10D6A /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83307A2BC1DADF00F10D6A /* HobbyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		CE2130592BC1435C00E09308 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
 		CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerAssembly.swift; sourceTree = "<group>"; };
+		CE83307A2BC1DADF00F10D6A /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				CE09729C2BC1C0FA00E2E80F /* PhotoView.swift */,
 				CE09729E2BC1C45200E2E80F /* ProfileDataView.swift */,
 				CE0972A02BC1C5E700E2E80F /* PersonalDataView.swift */,
+				CE83307A2BC1DADF00F10D6A /* HobbyView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				CE0972882BC17BC000E2E80F /* ProfileAssembly.swift in Sources */,
 				CE2130542BC1226800E09308 /* AuthAssembly.swift in Sources */,
 				CE09729B2BC1B20400E2E80F /* CuctomPin.swift in Sources */,
+				CE83307B2BC1DADF00F10D6A /* HobbyView.swift in Sources */,
 				CE2130572BC1300700E09308 /* MainScreenItemView.swift in Sources */,
 				CE0972912BC185C200E2E80F /* TemplateTracksViewController.swift in Sources */,
 				CE0972962BC1867900E2E80F /* TemplateTracksTableViewCell.swift in Sources */,

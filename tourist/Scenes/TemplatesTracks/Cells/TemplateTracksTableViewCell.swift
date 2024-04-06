@@ -17,6 +17,7 @@ final class TemplateTracksTableViewCell: UITableViewCell {
     private lazy var titleLabel = makeTitleLabel()
     private lazy var rating = makeRatingView()
     private lazy var descriptionLabel = makeDescriptionLabel()
+    private lazy var goButton = makeGoButton()
     
     
     // MARK: - Constructor
@@ -26,10 +27,15 @@ final class TemplateTracksTableViewCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .clear
         addlayout()
+        goButton.addTarget(self, action: #selector(goButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func goButtonTapped() {
+        UIApplication.shared.open(URL(string: "dgis://2gis.ru/routeSearch/rsType/car/from/30.333494,59.947164/to/30.149939,59.849767")!)
     }
 }
 
@@ -81,6 +87,16 @@ private extension TemplateTracksTableViewCell {
         label.numberOfLines = 0
         return label
     }
+    
+    func makeGoButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor.main
+        button.setTitle("Построить маршрут", for: .normal)
+        button.layer.cornerRadius = 16
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }
 }
 
 private extension TemplateTracksTableViewCell {
@@ -90,19 +106,21 @@ private extension TemplateTracksTableViewCell {
     }
     
     func addViews() {
+        contentView.addSubview(container)
         addSubview(container)
         container.addSubview(cellImage)
         container.addSubview(titleLabel)
         container.addSubview(rating)
         container.addSubview(descriptionLabel)
+        container.addSubview(goButton)
     }
     
     func setConstraints() {
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             container.bottomAnchor.constraint(equalTo: bottomAnchor, constant:  -12),
-            container.leftAnchor.constraint(equalTo: leftAnchor),
-            container.rightAnchor.constraint(equalTo: rightAnchor),
+            container.leftAnchor.constraint(equalTo: leftAnchor, constant: 8),
+            container.rightAnchor.constraint(equalTo: rightAnchor, constant: -8),
             
             cellImage.topAnchor.constraint(equalTo: container.topAnchor, constant: 12),
             cellImage.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
@@ -113,7 +131,6 @@ private extension TemplateTracksTableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
             titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
             
-            
             rating.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             rating.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
             rating.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
@@ -123,7 +140,12 @@ private extension TemplateTracksTableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: rating.bottomAnchor, constant: 12),
             descriptionLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
             descriptionLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            
+            goButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
+            goButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16),
+            goButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16),
+            goButton.heightAnchor.constraint(equalToConstant: 40),
+            goButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
         ])
     }
 }

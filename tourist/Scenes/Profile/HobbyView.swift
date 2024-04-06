@@ -1,5 +1,5 @@
 //
-//  PersonalDataView.swift
+//  HobbyView.swift
 //  tourist
 //
 //  Created by user on 06.04.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class PersonalDataView: UIView {
+final class HobbyView: UIView {
     private lazy var imageView = makeImageView()
     
     
@@ -21,16 +21,16 @@ final class PersonalDataView: UIView {
     }
 }
 
-private extension PersonalDataView {
+private extension HobbyView {
     func makeImageView() -> UIImageView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(resource: .personalData)
+        image.image = UIImage(resource: .hobbyView)
         return image
     }
 }
 
-private extension PersonalDataView {
+private extension HobbyView {
     func addlayout() {
         addViews()
         setConstraints()

@@ -12,7 +12,10 @@ final class TracksViewController: UIViewController {
     
     private lazy var backButton = makeBackButton()
     private lazy var largeTitle = makeLargeTitle()
-    private lazy var tableView = makeTableView()
+    private lazy var imageView = makeImageView()
+    private lazy var scrollView = makeScrollView()
+    private lazy var containerView = makeConteinerView()
+  //  private lazy var tableView = makeTableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +67,26 @@ private extension TracksViewController {
         label.textColor = .text
         return label
     }
+    
+    func makeScrollView() -> UIScrollView {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }
+    
+    func makeConteinerView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    func makeImageView() -> UIImageView {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(resource: .track)
+        image.contentMode = .scaleAspectFit
+        return image
+    }
 }
 
 private extension TracksViewController {
@@ -73,7 +96,9 @@ private extension TracksViewController {
     }
     
     func addViews() {
-        view.addSubview(tableView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(containerView)
+        containerView.addSubview(imageView)
         view.addSubview(backButton)
         view.addSubview(largeTitle)
     }
@@ -86,10 +111,23 @@ private extension TracksViewController {
             largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             largeTitle.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             
-            tableView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 50),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            scrollView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 50),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            containerView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            containerView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
+            
+            imageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            
         ])
     }
 }
