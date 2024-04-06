@@ -18,6 +18,7 @@ final class AuthController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(resource: .main)
         addLayout()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     init(viewModel: AuthViewModel) {
@@ -27,6 +28,10 @@ final class AuthController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func loginButtonTapped() {
+        dismiss(animated: true)
     }
 }
 
@@ -140,7 +145,7 @@ private extension AuthController {
             
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            loginButton.heightAnchor.constraint(equalToConstant: 40),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
             loginButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }

@@ -5,6 +5,12 @@ final class ProfileViewController: UIViewController {
     
     private lazy var largeTitle = makeLargeTitle()
     private lazy var backButton = makeBackButton()
+    private lazy var quitButton = makeQuitButton()
+    
+    private lazy var stackView = makeStackView()
+    private let photoView = PhotoView()
+    private let userDataView = ProfileDataView()
+    private let personalDataView = PersonalDataView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +32,12 @@ final class ProfileViewController: UIViewController {
 private extension ProfileViewController {
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func quitButtonTapped() {
+        let vc = AuthAssembly.assemblyScene()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
 }
 
@@ -49,6 +61,25 @@ private extension ProfileViewController {
         label.textColor = .text
         return label
     }
+    
+    func makeStackView() -> UIStackView {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 12
+        return stack
+    }
+    
+    func makeQuitButton() -> UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(
+            UIImage(resource: .backButton),
+            for: .normal
+        )
+        button.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
+        return button
+    }
 }
 
 private extension ProfileViewController {
@@ -59,7 +90,12 @@ private extension ProfileViewController {
     
     func addViews() {
         view.addSubview(backButton)
+        view.addSubview(quitButton)
         view.addSubview(largeTitle)
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(photoView)
+        stackView.addArrangedSubview(userDataView)
+        stackView.addArrangedSubview(personalDataView)
     }
     
     func setConstraints() {
@@ -67,10 +103,15 @@ private extension ProfileViewController {
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .zero),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             
+            quitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            quitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            
             largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             largeTitle.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             
-            
+            stackView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
             
         ])
     }

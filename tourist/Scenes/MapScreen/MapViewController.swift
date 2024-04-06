@@ -57,7 +57,6 @@ private extension MapViewController {
         }
     }
     
-    
 }
 
 // MARK: - Private Methods
