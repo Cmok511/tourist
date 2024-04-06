@@ -64,11 +64,13 @@ private extension ProfileViewController {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .zero),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             
             largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            largeTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            largeTitle.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
+            
+            
             
         ])
     }

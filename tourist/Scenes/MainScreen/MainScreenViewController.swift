@@ -59,6 +59,7 @@ private extension MainScreenViewController {
         personalView.setup(image: UIImage(resource: .profileItem))
         mapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushMap)))
         personalView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushProfile)))
+        templateView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushTemplateTracks)))
         trackerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushTracks)))
     }
     
@@ -76,6 +77,12 @@ private extension MainScreenViewController {
     
     @objc func pushTracks() {
         let vc = TracksAssembly.assemblyScene()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func pushTemplateTracks() {
+        let vc = TemplateTracksAssembly.assemblyScene()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }

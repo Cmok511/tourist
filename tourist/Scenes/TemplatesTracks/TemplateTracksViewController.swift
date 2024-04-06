@@ -1,14 +1,16 @@
 //
-//  TracksViewController.swift
+//  TemplateTracksViewController.swift
 //  tourist
 //
 //  Created by user on 06.04.2024.
 //
 
 import Foundation
+
+import Foundation
 import UIKit
 
-final class TracksViewController: UIViewController {
+final class TemplateTracksViewController: UIViewController {
     
     private lazy var backButton = makeBackButton()
     private lazy var largeTitle = makeLargeTitle()
@@ -31,17 +33,23 @@ final class TracksViewController: UIViewController {
     }
 }
 
-private extension TracksViewController {
+private extension TemplateTracksViewController {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
 }
 
-private extension TracksViewController {
+private extension TemplateTracksViewController {
     func makeTableView() -> UITableView {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = .red
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(
+            TemplateTracksTableViewCell.self,
+            forCellReuseIdentifier: TemplateTracksTableViewCell.reuseID
+        )
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         return tableView
     }
     
@@ -59,14 +67,14 @@ private extension TracksViewController {
     func makeLargeTitle() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Ваш маршрут"
+        label.text = "Готовенькое"
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.textColor = .text
         return label
     }
 }
 
-private extension TracksViewController {
+private extension TemplateTracksViewController {
     func addlayout() {
         addViews()
         setConstraints()
@@ -86,10 +94,25 @@ private extension TracksViewController {
             largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             largeTitle.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             
-            tableView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 50),
+            tableView.topAnchor.constraint(equalTo: largeTitle.bottomAnchor, constant: 10),
+            
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+}
+
+// MARK: - UITableViewDataSource
+
+extension TemplateTracksViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TemplateTracksTableViewCell.reuseID, for: indexPath) as! TemplateTracksTableViewCell
+        return cell
+    }
+    
 }
