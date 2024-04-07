@@ -19,6 +19,7 @@ final class TemplateTracksTableViewCell: UITableViewCell {
     private lazy var descriptionLabel = makeDescriptionLabel()
     private lazy var goButton = makeGoButton()
     
+    private var track: Tracks?
     
     // MARK: - Constructor
     
@@ -35,7 +36,23 @@ final class TemplateTracksTableViewCell: UITableViewCell {
     }
     
     @objc private func goButtonTapped() {
-        UIApplication.shared.open(URL(string: "dgis://2gis.ru/routeSearch/rsType/car/from/30.333494,59.947164/to/30.149939,59.849767")!)
+        
+        guard let lonFrom = track?.locations.first?.lon else {return }
+        guard let latFrom = track?.locations.first?.lat else {return }
+        
+        guard let lonTo = track?.locations.last?.lon else {return }
+        guard let latTo = track?.locations.last?.lat else {return }
+        print(latFrom, lonFrom )
+        print(latTo, lonTo )
+        
+        UIApplication.shared.open(URL(string: "dgis://2gis.ru/routeSearch/rsType/car/from/\(38.995774),\(45.037588)/to/\(39.136426),\(44.634246)")!)
+
+    }
+    
+    func setup(track: Tracks) {
+        self.track = track
+        titleLabel.text = track.name
+        descriptionLabel.text = track.description
     }
 }
 
@@ -44,6 +61,7 @@ private extension TemplateTracksTableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
+        imageView.image = UIImage(resource: .tracks)
         imageView.layer.cornerRadius = 16
         return imageView
     }
@@ -74,7 +92,7 @@ private extension TemplateTracksTableViewCell {
     func makeRatingView() -> UIView {
         let rating = UIView()
         rating.translatesAutoresizingMaskIntoConstraints = false
-        rating.backgroundColor = .yellow
+        rating.backgroundColor = .clear
         return rating
     }
     
@@ -134,7 +152,7 @@ private extension TemplateTracksTableViewCell {
             rating.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             rating.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12),
             rating.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12),
-            rating.heightAnchor.constraint(equalToConstant: 20),
+            rating.heightAnchor.constraint(equalToConstant: 1),
             
             
             descriptionLabel.topAnchor.constraint(equalTo: rating.bottomAnchor, constant: 12),

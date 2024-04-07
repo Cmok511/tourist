@@ -41,6 +41,10 @@
 		CE21305C2BC1439B00E09308 /* MapViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */; };
 		CE21305E2BC143B600E09308 /* MapViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */; };
 		CE83307B2BC1DADF00F10D6A /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83307A2BC1DADF00F10D6A /* HobbyView.swift */; };
+		CE83307E2BC2691A00F10D6A /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83307D2BC2691A00F10D6A /* HelpViewController.swift */; };
+		CE8330802BC26A2500F10D6A /* HelpSceneAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE83307F2BC26A2500F10D6A /* HelpSceneAssembly.swift */; };
+		CE8330822BC26D7F00F10D6A /* HelpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8330812BC26D7F00F10D6A /* HelpCell.swift */; };
+		CE8330842BC2756C00F10D6A /* TepmlateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8330832BC2756C00F10D6A /* TepmlateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		CE21305B2BC1439B00E09308 /* MapViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerViewModel.swift; sourceTree = "<group>"; };
 		CE21305D2BC143B600E09308 /* MapViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerAssembly.swift; sourceTree = "<group>"; };
 		CE83307A2BC1DADF00F10D6A /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
+		CE83307D2BC2691A00F10D6A /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		CE83307F2BC26A2500F10D6A /* HelpSceneAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpSceneAssembly.swift; sourceTree = "<group>"; };
+		CE8330812BC26D7F00F10D6A /* HelpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCell.swift; sourceTree = "<group>"; };
+		CE8330832BC2756C00F10D6A /* TepmlateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TepmlateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 			children = (
 				CE0972942BC1865F00E2E80F /* Cells */,
 				CE0972902BC185C200E2E80F /* TemplateTracksViewController.swift */,
+				CE8330832BC2756C00F10D6A /* TepmlateViewModel.swift */,
 				CE0972922BC185E200E2E80F /* TemplateTracksAssembly.swift */,
 			);
 			path = TemplatesTracks;
@@ -217,6 +226,7 @@
 		CE21303C2BC119AA00E09308 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CE83307C2BC2690800F10D6A /* Help */,
 				CE09728F2BC1859D00E2E80F /* TemplatesTracks */,
 				CE0972892BC1808000E2E80F /* Tracks */,
 				CE0972842BC17AC400E2E80F /* Profile */,
@@ -257,6 +267,16 @@
 				CE09729A2BC1B20400E2E80F /* CuctomPin.swift */,
 			);
 			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		CE83307C2BC2690800F10D6A /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				CE83307D2BC2691A00F10D6A /* HelpViewController.swift */,
+				CE83307F2BC26A2500F10D6A /* HelpSceneAssembly.swift */,
+				CE8330812BC26D7F00F10D6A /* HelpCell.swift */,
+			);
+			path = Help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +364,9 @@
 				CE2130522BC1225000E09308 /* AuthViewModel.swift in Sources */,
 				CE0972882BC17BC000E2E80F /* ProfileAssembly.swift in Sources */,
 				CE2130542BC1226800E09308 /* AuthAssembly.swift in Sources */,
+				CE8330842BC2756C00F10D6A /* TepmlateViewModel.swift in Sources */,
 				CE09729B2BC1B20400E2E80F /* CuctomPin.swift in Sources */,
+				CE8330822BC26D7F00F10D6A /* HelpCell.swift in Sources */,
 				CE83307B2BC1DADF00F10D6A /* HobbyView.swift in Sources */,
 				CE2130572BC1300700E09308 /* MainScreenItemView.swift in Sources */,
 				CE0972912BC185C200E2E80F /* TemplateTracksViewController.swift in Sources */,
@@ -353,6 +375,7 @@
 				CE2130432BC11A5000E09308 /* MainScreenAssembly.swift in Sources */,
 				CE21301D2BC1187400E09308 /* Coordinator.swift in Sources */,
 				CE0972A12BC1C5E700E2E80F /* PersonalDataView.swift in Sources */,
+				CE8330802BC26A2500F10D6A /* HelpSceneAssembly.swift in Sources */,
 				CE2130412BC11A2D00E09308 /* MainScreenViewModel.swift in Sources */,
 				CE0972862BC17AD400E2E80F /* ProfileViewController.swift in Sources */,
 				CE21305C2BC1439B00E09308 /* MapViewControllerViewModel.swift in Sources */,
@@ -368,6 +391,7 @@
 				CE2130202BC1187E00E09308 /* TabBarController.swift in Sources */,
 				CE2130052BC117AE00E09308 /* SceneDelegate.swift in Sources */,
 				CE21303F2BC11A0E00E09308 /* MainScreenViewController.swift in Sources */,
+				CE83307E2BC2691A00F10D6A /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

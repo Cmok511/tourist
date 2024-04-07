@@ -15,11 +15,19 @@ final class TemplateTracksViewController: UIViewController {
     private lazy var backButton = makeBackButton()
     private lazy var largeTitle = makeLargeTitle()
     private lazy var tableView = makeTableView()
+    private let viewModel = TemplatesViewModel()
+    private var taracks: [Tracks] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addlayout()
         view.backgroundColor = UIColor(resource: .background)
+        getTracks()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +39,13 @@ final class TemplateTracksViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    func getTracks() {
+        viewModel.getTracks { tracks in
+            self.taracks = tracks
+        }
+    }
+    
 }
 
 private extension TemplateTracksViewController {
@@ -107,11 +122,12 @@ private extension TemplateTracksViewController {
 
 extension TemplateTracksViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        taracks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TemplateTracksTableViewCell.reuseID, for: indexPath) as! TemplateTracksTableViewCell
+        cell.setup(track: taracks[indexPath.row])
         return cell
     }
     

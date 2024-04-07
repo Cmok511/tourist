@@ -75,7 +75,7 @@ private extension ProfileViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(
-            UIImage(resource: .backButton),
+            UIImage(resource: .exitButton),
             for: .normal
         )
         button.addTarget(self, action: #selector(quitButtonTapped), for: .touchUpInside)
@@ -105,7 +105,7 @@ private extension ProfileViewController {
             backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: .zero),
             backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             
-            quitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 2),
+            quitButton.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
             quitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             
             largeTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor),

@@ -120,6 +120,7 @@ private extension MapViewController {
             UIImage(resource: .helpButton),
             for: .normal
         )
+        button.addTarget(self, action: #selector(helpButtonTapped), for: .touchUpInside)
         return button
     }
 }
@@ -135,6 +136,14 @@ private extension MapViewController {
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func helpButtonTapped() {
+        let vc = HelpSceneAssembly.assemblyScene()
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+        }
+        navigationController?.present(vc, animated: true)
     }
     
 }
